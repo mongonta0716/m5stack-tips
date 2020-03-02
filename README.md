@@ -17,5 +17,5 @@ Sample to check reading and writing to SPIFFS
 
 This is a sample of the mechanism to monitor the power status of M5StickC and notify by IFTTT → LINE Notify when the battery is driven.
 
-
+ certificate.hの作成はQiitaの[ESP32からIFTTTを使ってLINE Notifyで通知を送ってみた(@mascii)](https://qiita.com/mascii/items/4c366ad4709469d5fda9)を参考にさせていただきました。
 

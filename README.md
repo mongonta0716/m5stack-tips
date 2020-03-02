@@ -16,6 +16,10 @@ Sample to check reading and writing to SPIFFS
  M5StickCの電源状態を監視してバッテリー駆動になったらIFTTT→LINE Notifyで通知する仕組みのサンプルです。
 
 This is a sample of the mechanism to monitor the power status of M5StickC and notify by IFTTT → LINE Notify when the battery is driven.
+### References
+　参考にさせていただいた記事
 
- certificate.hの作成はQiitaの[ESP32からIFTTTを使ってLINE Notifyで通知を送ってみた(@mascii)](https://qiita.com/mascii/items/4c366ad4709469d5fda9)を参考にさせていただきました。
+ M5StickCのクラス仕様は[M5StickC非公式日本語リファレンス-電源管理(AXP192)](https://lang-ship.com/reference/unofficial/M5StickC/Class/AXP192/)[(@tnkmasayuki)](https://twitter.com/tnkmasayuki)
+
+ certificate.hの作成はQiitaの[ESP32からIFTTTを使ってLINE Notifyで通知を送ってみた](https://qiita.com/mascii/items/4c366ad4709469d5fda9)[(@mascii)](https://qiita.com/mascii)
 

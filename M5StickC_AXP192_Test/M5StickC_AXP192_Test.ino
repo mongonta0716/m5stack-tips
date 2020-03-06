@@ -15,14 +15,14 @@
 
 const char* server = "maker.ifttt.com";
 
-float ibat,vext,vusb;
+float ibat,vbus;
 WiFiClientSecure client;
 
 
 void setup() {
   M5.begin();
   Wire.begin();
-  
+  Serial.begin(115200);
   M5.Lcd.setRotation(3);
   M5.Lcd.fillScreen(TFT_BLACK);
   M5.Lcd.setTextSize(1);
@@ -33,6 +33,12 @@ void setup() {
   M5.Lcd.printf("%.2f:", ibat);
   M5.Lcd.printf("%.2f:", vext);
   M5.Lcd.printf("%.2f", vusb);
+  Serial.printf("%.2f:", ibat);
+  Serial.printf("%.2f:", vext);
+  Serial.printf("%.2f", vusb);
+  Serial.printf(" Temp :%6.1f\n", M5.Axp.GetTempInAXP192());  // AXP192の内部温度
+
+  
   
   send("Start", "", clientName);
   delay(2000);
@@ -117,8 +123,8 @@ void loop() {
   M5.Lcd.printf(" Warn :%6d\n"  , M5.Axp.GetWarningLevel());  // バッテリー残量警告 0:残あり, 1:残なし
   M5.Lcd.printf(" Temp :%6.1f\n", M5.Axp.GetTempInAXP192());  // AXP192の内部温度
   M5.Lcd.printf(" V(V) :%6.3f\n", M5.Axp.GetBatVoltage());    // バッテリー電圧(3.0V-4.2V程度)
-  M5.Lcd.printf(" I(mA):%6.1f\n", M5.Axp.GetBatCurrent());    // バッテリー電流(プラスが充電、マイナスが放電)
-  M5.Lcd.printf(" W(mW):%6.1f\n", M5.Axp.GetBatPower());      // バッテリー電力(W=V*abs(I))
+  M5.Lcd.printf(" I(mA):%6.3f\n", M5.Axp.GetBatCurrent());    // バッテリー電流(プラスが充電、マイナスが放電)
+  M5.Lcd.printf(" W(mW):%6.3f\n", M5.Axp.GetBatPower());      // バッテリー電力(W=V*abs(I))
  
   M5.Lcd.printf("ASP\n");
   M5.Lcd.printf(" V(V) :%6.3f\n", M5.Axp.GetAPSVoltage());    // ESP32に供給されている電圧
@@ -132,19 +138,21 @@ void loop() {
   M5.Lcd.printf(" I(mA):%6.3f\n", M5.Axp.GetVinCurrent());    // 5V IN端子からの電流
 
   ibat = M5.Axp.GetBatCurrent();
-  vext = M5.Axp.GetVinVoltage();
+  vbus = M5.Axp.GetVBusVoltage();
   if (!batteryNone) {
-    if ((ibat < 0) && (vext < 4)) {
-      M5.Lcd.setCursor(0, 160);
-      M5.Lcd.print("Battery None");
+    if ((ibat < 0) && (vbus < 4)) {
       batteryNone = true;
       float vbat = M5.Axp.GetBatVoltage();
       send("BatteryNone", "Bat:" + String(vbat) + "V", clientName);
+      M5.Lcd.setCursor(0, 150);
+      M5.Lcd.print("ExtPowerOff");
 
       targetTime = millis() + 3 * 60 * 1000; // Wait send
     }
   } else if (targetTime < millis()) {
       batteryNone = false;
+      M5.Lcd.setCursor(0, 150);
+      M5.Lcd.print("ExtPower On");
   }
 
   delay(1000);

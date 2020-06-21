@@ -1,4 +1,4 @@
-/**
+/** 
  * \par Copyright (C), 2018, AQUEST
  * \class AquesTalkTTS
  * \brief   Text-to-Sppech library. uses AquesTalk-ESP, I2S, intenal-DAC.

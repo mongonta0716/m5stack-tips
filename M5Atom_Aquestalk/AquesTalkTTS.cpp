@@ -137,7 +137,7 @@ void task_TTS_synthe(void *arg)
 //i2s configuration 
 static const int i2s_num = 0; // i2s port number
 static i2s_config_t i2s_config = {
-     .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_TX | I2S_MODE_DAC_BUILT_IN),
+     .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_TX), // | I2S_MODE_DAC_BUILT_IN),
      .sample_rate = SAMPLING_FREQ,
      .bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT,
      .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
@@ -147,19 +147,23 @@ static i2s_config_t i2s_config = {
      .dma_buf_len = DMA_BUF_LEN,
      .use_apll = 0
 };
+static const i2s_pin_config_t pin_config = {
+  .bck_io_num = 19,
+  .ws_io_num  = 33,
+  .data_out_num = 22,
+  .data_in_num = 23
+};
 
 static void DAC_create()
 {
-  dac_output_enable(DAC_CHANNEL_1);
   i2s_driver_install((i2s_port_t)i2s_num, &i2s_config, 0, NULL);
-  i2s_set_pin((i2s_port_t)i2s_num, NULL);
+  i2s_set_pin((i2s_port_t)i2s_num, &pin_config);
   i2s_stop((i2s_port_t)i2s_num);  // Create時はstop状態
 }
 
 static void DAC_release()
 {
   i2s_driver_uninstall((i2s_port_t)i2s_num); //stop & destroy i2s driver 
-  dac_output_disable(DAC_CHANNEL_1);
 }
 
 static void DAC_start()
@@ -197,7 +201,7 @@ static int DAC_write(int len, int16_t *wav)
     int16_t wav3[3];
     AqResample_Conv(wav[i], wav3);
 
-    float gain = 0.1; // 音量
+    float gain = 0.3; // 音量
     for(int k=0;k<3; k++){
       wav3[k] *= gain;
 			int iret = DAC_write_val(((uint16_t)wav3[k])^0x8000U);

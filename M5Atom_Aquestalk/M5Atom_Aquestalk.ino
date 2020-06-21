@@ -1,4 +1,3 @@
-
 #include <M5Atom.h>
 #include <driver/i2s.h>
 #include "AquesTalkTTS.h"

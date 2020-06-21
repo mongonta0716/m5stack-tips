@@ -23,10 +23,13 @@ This is a sample of the mechanism to monitor the power status of M5StickC and no
 
  certificate.hの作成はQiitaの[ESP32からIFTTTを使ってLINE Notifyで通知を送ってみた](https://qiita.com/mascii/items/4c366ad4709469d5fda9)[(@mascii)](https://qiita.com/mascii)
 
- ## M5Stack_ATTiny85_I2CTest
+## M5Stack_ATTiny85_I2CTest
 　M5StackとATTiny85をI2Cで接続し動作確認をするためのサンプル
 　詳しくは[M5StackとATTiny85でI2C通信をする](https://raspberrypi.mongonta.com/howto-connect-m5stack-and-attiny85-via-i2c/)を見てください。
 
-　
+## M5Atom_Aquestalk
+  M5AtomEchoで安全にAquesTalkを使うためのサンプル
+  AquesTalk for ESP32のインストールが必要です。詳しくは[AquesTalk pico for ESP32
+(AquesTalk-ESP)](https://www.a-quest.com/products/aquestalk_pico_esp32.html)を見てください。
 
 

@@ -32,4 +32,6 @@ This is a sample of the mechanism to monitor the power status of M5StickC and no
   AquesTalk for ESP32のインストールが必要です。詳しくは[AquesTalk pico for ESP32
 (AquesTalk-ESP)](https://www.a-quest.com/products/aquestalk_pico_esp32.html)を見てください。
 
-
+## M5StickC_UIFlow_ServoTest
+  M5StickCにサーボを取り付けて動作確認するためのプログラムです。
+  GND-5Vout-G26にサーボを取り付けると動作します。

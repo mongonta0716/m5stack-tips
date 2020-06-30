@@ -35,3 +35,9 @@ This is a sample of the mechanism to monitor the power status of M5StickC and no
 ## M5StickC_UIFlow_ServoTest
   M5StickCにサーボを取り付けて動作確認するためのプログラムです。
   GND-5Vout-G26にサーボを取り付けると動作します。
+
+## M5Core_UIFlow_Servo_Test_faces_encoder
+  M5StackCore+Faces+Encoderの組み合わせでサーボ単体をコントロールして動作チェックできます。
+  BtnA:0°,BtnB:90°,BtnC:180°
+  エンコーダーを回すと5°ずつ変化します。
+  GPIO26にサーボのPWMを接続してください。

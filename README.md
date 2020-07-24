@@ -51,7 +51,18 @@ This is a sample of the mechanism to monitor the power status of M5StickC and no
 ## M5Atom_Relay_for_alexawemo_and_blynk
   M5AtomLiteとM5StackのRELAY Unitを組み合わせてRELAYのON/OFFをAlexaとBlynkから制御できるようになるアプリです。
 
-  ※ PCの電源を制御しているのでdeviceON()とdeviceOFF()はカスタマイズしてください。ステータス参照機能は実装していません。
+### ※1 Amazon Alexa
+
+ 動作確認はEcho Dot 第三世代で行いました。（Echo Show 5からはデバイス追加できず。)
+
+ サンプルはPCのPowerSWとして動作するようになっています。用途に合わせてカスタマイズしてください。
+
+ 「Alexaデバイスを検出して」でServerというデバイスが見つかります。名前はAlexaアプリから自分で変えましょう。
+
+ deviceOn()とdeviceOff()は同じ動作です。0.5秒間リレーをON→OFFします。用途に合わせてカスタマイズしてください。ステータス参照機能は実装していません。
+
+### ※2 Blynk
+ Blynkアプリ上でボタン（VirtualPin V0）を押すとRELAYの状態がON、ボタンを離すとOFFになります。
 
 ●必要なライブラリ
 - Blynkのライブラリ

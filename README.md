@@ -47,3 +47,12 @@ This is a sample of the mechanism to monitor the power status of M5StickC and no
   エンコーダーを回すと5°ずつ変化します。
 
   GPIO26にサーボのPWMを接続してください。FacesⅡBottomの場合は黒いGroveCポートからGND-5V-G26を取ることができます。
+
+## M5Atom_Relay_for_alexawemo_and_blynk
+  M5AtomLiteとM5StackのRELAY Unitを組み合わせてRELAYのON/OFFをAlexaとBlynkから制御できるようになるアプリです。
+
+  ※ PCの電源を制御しているのでdeviceON()とdeviceOFF()はカスタマイズしてください。ステータス参照機能は実装していません。
+
+●必要なライブラリ
+- Blynkのライブラリ
+- [esp32-alexa-wemo-emulator](https://github.com/mongonta0716/esp32-alexa-wemo-emulator)

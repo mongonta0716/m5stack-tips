@@ -73,3 +73,8 @@ This is a sample of the mechanism to monitor the power status of M5StickC and no
   AquesTalk for ESP32のインストールが必要です。詳しくは[AquesTalk pico for ESP32
 (AquesTalk-ESP)](https://www.a-quest.com/products/aquestalk_pico_esp32.html)を見てください。
 
+## Core2_MP3
+  M5Stack Core2でSDカード上のMP3ファイルを再生するサンプル
+  [ESP8266Audio](https://github.com/earlephilhower/ESP8266Audio)が必要です。
+  M5Stackの[PlayMP3FromSDToDAC.ino](https://github.com/m5stack/M5Stack/blob/master/examples/Advanced/Audio/PlayMP3FromSDToDAC/PlayMP3FromSDToDAC.ino)を元に改変しました。
+

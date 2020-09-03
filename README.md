@@ -67,3 +67,9 @@ This is a sample of the mechanism to monitor the power status of M5StickC and no
 ●必要なライブラリ
 - Blynkのライブラリ
 - [esp32-alexa-wemo-emulator](https://github.com/mongonta0716/esp32-alexa-wemo-emulator)
+
+## Core2_Aquestalk
+  M5Stack Core2でAquesTalkを使うためのサンプル
+  AquesTalk for ESP32のインストールが必要です。詳しくは[AquesTalk pico for ESP32
+(AquesTalk-ESP)](https://www.a-quest.com/products/aquestalk_pico_esp32.html)を見てください。
+

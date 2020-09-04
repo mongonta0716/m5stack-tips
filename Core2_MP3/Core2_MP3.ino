@@ -34,10 +34,9 @@ void setup()
   M5.Lcd.printf("Sample MP3 playback begins...\n");
   Serial.printf("Sample MP3 playback begins...\n");
 
-  // pno_cs from https://ccrma.stanford.edu/~jos/pasp/Sound_Examples.html
   file = new AudioFileSourceSD("/mp3/chikichiki.mp3");
   id3 = new AudioFileSourceID3(file);
-  out = new AudioOutputI2S(0, 0); // Output to builtInDAC
+  out = new AudioOutputI2S(0, 0); // Output to ExternalDAC
   out->SetPinout(12, 0, 2);
   out->SetOutputModeMono(true);
   out->SetGain((float)OUTPUT_GAIN/100.0);

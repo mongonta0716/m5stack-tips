@@ -78,3 +78,7 @@ This is a sample of the mechanism to monitor the power status of M5StickC and no
   [ESP8266Audio](https://github.com/earlephilhower/ESP8266Audio)が必要です。
   M5Stackの[PlayMP3FromSDToDAC.ino](https://github.com/m5stack/M5Stack/blob/master/examples/Advanced/Audio/PlayMP3FromSDToDAC/PlayMP3FromSDToDAC.ino)を元に改変しました。
 
+## Core2_WAV
+  M5Stack Core2でSDカード上のWAVファイルを再生するサンプル
+  [ESP8266Audio](https://github.com/earlephilhower/ESP8266Audio)が必要です。
+  M5Stackの[PlayWAVFromSDToDAC.ino](https://github.com/m5stack/M5Stack/blob/master/examples/Advanced/Audio/PlayWAVFromSDToDAC/PlayWAVFromSDToDAC.ino)を元に改変しました。

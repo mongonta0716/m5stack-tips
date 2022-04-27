@@ -10,7 +10,7 @@ void setup() {
   M5.Lcd.setTextColor(WHITE);
   M5.Lcd.setTextSize(2);
   M5.Lcd.println("AquesTalk Test");
-
+  M5.Axp.SetSpkEnable(true);
   int iret = TTS.create(NULL);
 
   TTS.play("emufaibu,sutakku,koatsu-,tanoshiiyo", 20);

@@ -31,13 +31,14 @@
 #define _AQUESTALK_TTS_H_
 
 class AquesTalkTTS {
-	public:
-		int create(const char *licencekey);
-		void release();
+  public:
+    int create(const char *licencekey);
+    void release();
 
-		int play(const char *koe, int speed);
-		void stop();
-	  int getLevel();
+    int play(const char *koe, int speed);
+    void stop();
+      int getLevel();
+    bool isPlay();
 };
 extern AquesTalkTTS TTS;
 
